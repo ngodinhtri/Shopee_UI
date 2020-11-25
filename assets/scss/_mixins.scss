@@ -1,0 +1,15 @@
+@mixin bgc-gradient {
+  background-image: linear-gradient(0, $secondary-color, $primary-color);
+}
+// prefix
+@mixin prefix($property, $value, $prefixes) {
+  @each $prefix in $prefixes {
+    -#{$prefix}-#{$property}: $value;
+  }
+  $property: $value;
+}
+//size
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}

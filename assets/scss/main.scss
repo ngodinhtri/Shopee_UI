@@ -1,0 +1,47 @@
+@use 'base';
+@import "variables";
+@import "./mixins";
+// header
+.header {
+  height: 120px;
+  @include bgc-gradient;
+  //   navbar
+  &__navbar {
+    display: flex;
+    justify-content: space-between;
+    // list
+    &-list {
+      padding-left: 0;
+      list-style: none;
+      //   item
+      & > .-item {
+        display: inline-block;
+        margin: 0 8px;
+        position: relative;
+        //item: css text
+        &,
+        & > .-link {
+          font-size: 1.4rem;
+          color: $white-color;
+          text-decoration: none;
+          font-weight: 300;
+          &.--bold {
+            font-weight: 600;
+          }
+        }
+        //separate
+        &.--separate::after {
+          content: "";
+          display: block;
+          position: absolute;
+          @include size(1px, 14px);
+          background-color: $white-color;
+          top: 50%;
+          @include prefix(transform, translateY(-50%), webkit ms);
+          margin-right: -9px;
+          right: 0;
+        }
+      }
+    }
+  }
+}
