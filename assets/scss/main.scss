@@ -1,4 +1,4 @@
-@use 'base';
+@import "base";
 @import "variables";
 @import "./mixins";
 // header
@@ -18,19 +18,27 @@
         display: inline-block;
         margin: 0 8px;
         position: relative;
+        //hover
+        &:hover,
+        & > .-link:hover,
+        & > .icon-link:hover {
+          cursor: pointer;
+          color: rgba($color: $white-color, $alpha: 0.7);
+        }
         //item: css text
         &,
-        & > .-link {
+        & > .-link,
+        & > .icon-link {
           font-size: 1.4rem;
           color: $white-color;
           text-decoration: none;
           font-weight: 300;
-          &.--bold {
+          &.-bold {
             font-weight: 600;
           }
         }
         //separate
-        &.--separate::after {
+        &.-separate::after {
           content: "";
           display: block;
           position: absolute;
@@ -42,6 +50,44 @@
           right: 0;
         }
       }
+      & > .-disable-hover:hover {
+        cursor: text;
+        color: $white-color;
+      }
+      & > .-has-qr:hover .header__qr {
+        display: block;
+      }
+    }
+  }
+  //QR Code
+  &__qr {
+    background-color: $white-color;
+    @include size(190px, auto);
+    position: absolute;
+    @include position-tfbr(calc(100% + 10px), 0, auto, auto);
+    padding: 4px;
+    @include primary-border-radius;
+    display: none;
+    animation: fadeIn ease-in-out 0.3s;
+    &-img {
+      @include size(100%, auto);
+    }
+    &-apps {
+      display: flex;
+      justify-content: space-around;
+      & > .-link {
+        & > .-img {
+          @include size(auto, 17px);
+        }
+      }
+    }
+    &::before {
+      content: "";
+      display: block;
+      @include size(100%, 25px);
+      position: absolute;
+      top: -20px;
+      left: 0;
     }
   }
 }
