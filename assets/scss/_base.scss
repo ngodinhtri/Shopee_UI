@@ -1,5 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap");
+@import "mixins";
+@import "variables";
 * {
   box-sizing: inherit;
 }
@@ -8,7 +9,7 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
   line-height: 1.6rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 .grid {
@@ -31,5 +32,35 @@ html {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes notify-growth {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+// Modal
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  &__overlay {
+    position: absolute;
+    @include size(100%);
+    background: rgba($color: $black-color, $alpha: 0.4);
+  }
+  &__body {
+    position: relative;
+    background-color: red;
+    margin: auto;
+    @include primary-border-radius;
   }
 }

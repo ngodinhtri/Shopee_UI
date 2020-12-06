@@ -14,7 +14,7 @@
   height: $height;
 }
 //position
-@mixin position-tfbr($top: auto, $left: auto, $bottom: auto, $right: auto) {
+@mixin position-tlbr($top: auto, $left: auto, $bottom: auto, $right: auto) {
   top: $top;
   left: $left;
   bottom: $bottom;

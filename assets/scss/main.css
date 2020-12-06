@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap");
 * {
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
@@ -9,7 +9,7 @@ html {
           box-sizing: border-box;
   font-size: 62.5%;
   line-height: 1.6rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 .grid {
@@ -46,6 +46,53 @@ html {
   100% {
     opacity: 1;
   }
+}
+
+@-webkit-keyframes notify-growth {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes notify-growth {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.modal__overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.modal__body {
+  position: relative;
+  background-color: red;
+  margin: auto;
+  border-radius: 3px;
 }
 
 .header {
@@ -119,6 +166,10 @@ html {
   display: block;
 }
 
+.header__navbar-list > .-has-notify:hover .header__notify {
+  display: block;
+}
+
 .header__qr {
   background-color: #fff;
   width: 190px;
@@ -161,5 +212,115 @@ html {
   position: absolute;
   top: -20px;
   left: 0;
+}
+
+.header__notify {
+  position: absolute;
+  background-color: #fff;
+  top: calc(100% + 10px);
+  left: auto;
+  bottom: auto;
+  right: 0;
+  width: 400px;
+  height: auto;
+  color: #333;
+  border: #d3d3d3 1px solid;
+  -webkit-animation: notify-growth ease-in 0.3s;
+          animation: notify-growth ease-in 0.3s;
+  -webkit-transform-origin: calc(100% - 20px) top;
+          transform-origin: calc(100% - 20px) top;
+  display: none;
+}
+
+.header__notify > .-header {
+  margin: 12px;
+  cursor: default;
+  width: auto;
+  height: 30px;
+}
+
+.header__notify > .-header h3 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 30px;
+}
+
+.header__notify-list {
+  padding: 0;
+  list-style: none;
+}
+
+.header__notify-list .-item .-link {
+  padding: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-decoration: none;
+  color: #333;
+  background-color: rgba(245, 62, 45, 0.1);
+}
+
+.header__notify-list .-item .-link .-img {
+  width: 48px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.header__notify-list .-item .-link > .-info {
+  margin-left: 10px;
+}
+
+.header__notify-list .-item .-link > .-info .-info__name {
+  font-size: 1.4rem;
+  color: #000;
+  font-weight: 600;
+}
+
+.header__notify-list .-item .-link > .-info .-info__desc {
+  font-size: 1.2rem;
+  color: #756f6e;
+}
+
+.header__notify-list .-item .-link > .-info p {
+  margin: 0;
+  line-height: 22px;
+}
+
+.header__notify-list .-item .-link:hover {
+  background-color: #f7f7f7;
+}
+
+.header__notify > .-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header__notify > .-footer > .-btn-load-more {
+  text-decoration: none;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  margin: auto;
+  font-weight: 600;
+}
+
+.header__notify::before {
+  content: "";
+  border: 12px solid;
+  border-bottom: 10px solid;
+  border-color: transparent transparent #fff transparent;
+  position: absolute;
+  top: -22px;
+  right: 16px;
+}
+
+.header__notify::after {
+  content: "";
+  width: 100%;
+  height: 25px;
+  position: absolute;
+  top: -20px;
 }
 /*# sourceMappingURL=main.css.map */
