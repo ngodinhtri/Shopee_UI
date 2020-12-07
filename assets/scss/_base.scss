@@ -59,8 +59,37 @@ html {
   }
   &__body {
     position: relative;
-    background-color: red;
+    background-color: $white-color;
     margin: auto;
-    @include primary-border-radius;
+    @extend %primary-border-radius;
+  }
+}
+
+//Button
+.btn {
+  @include size(148px, 36px);
+  min-width: 148px;
+  border: none;
+  text-decoration: none;
+  @extend %primary-border-radius;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: $text-primary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.-primary {
+    background-color: $primary-color;
+    color: $white-color;
+  }
+  &.-disable {
+    color: $text-secondary-color;
+    cursor: default;
+    background-color: #c3c3c3;
+  }
+  &.-size-s {
+    height: 30px;
   }
 }
