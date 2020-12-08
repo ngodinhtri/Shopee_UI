@@ -61,7 +61,7 @@ html {
   }
 }
 
-@-webkit-keyframes notify-growth {
+@-webkit-keyframes growth {
   from {
     -webkit-transform: scale(0);
             transform: scale(0);
@@ -72,7 +72,7 @@ html {
   }
 }
 
-@keyframes notify-growth {
+@keyframes growth {
   from {
     -webkit-transform: scale(0);
             transform: scale(0);
@@ -84,6 +84,8 @@ html {
 }
 
 .modal {
+  -webkit-animation: fadeIn linear 0.2s;
+          animation: fadeIn linear 0.2s;
   position: fixed;
   top: 0;
   left: 0;
@@ -105,6 +107,8 @@ html {
   position: relative;
   background-color: #fff;
   margin: auto;
+  -webkit-animation: growth 0.1s linear;
+          animation: growth 0.1s linear;
 }
 
 .btn {
@@ -173,6 +177,7 @@ html {
 }
 
 .header__navbar-list {
+  margin: 10px 0 0 0;
   padding-left: 0;
   list-style: none;
 }
@@ -285,9 +290,9 @@ html {
   width: 400px;
   height: auto;
   color: #333;
-  border: #d3d3d3 1px solid;
-  -webkit-animation: notify-growth ease-in 0.3s;
-          animation: notify-growth ease-in 0.3s;
+  border: #d3d3d3 1px;
+  -webkit-animation: growth ease-in 0.3s;
+          animation: growth ease-in 0.3s;
   -webkit-transform-origin: calc(100% - 20px) top;
           transform-origin: calc(100% - 20px) top;
   display: none;
@@ -404,6 +409,7 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding: 0 12px;
 }
 
 .auth-form__header > .-heading {
@@ -426,19 +432,45 @@ html {
   margin-top: 16px;
 }
 
-.auth-form__content .form__policy {
+.auth-form__content .form__aside {
   margin-top: 20px;
   text-align: center;
 }
 
-.auth-form__content .form__policy > .-content {
+.auth-form__content .form__aside > .-content {
   font-size: 1.4rem;
   font-weight: 500;
 }
 
-.auth-form__content .form__policy > .-content > .-link {
+.auth-form__content .form__aside > .-content > .-link {
   text-decoration: none;
   color: #f53e2d;
+}
+
+.auth-form__content .form__aside > .form__help {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.auth-form__content .form__aside > .form__help .-link {
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #939393;
+}
+
+.auth-form__content .form__aside > .form__help .-link.-forgot {
+  color: #f53e2d;
+}
+
+.auth-form__content .form__aside > .form__help .-separate {
+  display: block;
+  border: #d3d3d3 1px solid;
+  margin: 0 16px;
 }
 
 .auth-form__content .form__controls {

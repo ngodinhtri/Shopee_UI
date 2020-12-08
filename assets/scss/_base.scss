@@ -35,7 +35,7 @@ html {
   }
 }
 
-@keyframes notify-growth {
+@keyframes growth {
   from {
     transform: scale(0);
   }
@@ -46,6 +46,7 @@ html {
 
 // Modal
 .modal {
+  animation: fadeIn linear 0.2s;
   position: fixed;
   top: 0;
   left: 0;
@@ -62,6 +63,7 @@ html {
     background-color: $white-color;
     margin: auto;
     @extend %primary-border-radius;
+    animation: growth 0.1s linear;
   }
 }
 

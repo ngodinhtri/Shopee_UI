@@ -11,6 +11,7 @@
     justify-content: space-between;
     // list
     &-list {
+      margin: 10px 0 0 0;
       padding-left: 0;
       list-style: none;
       //   item
@@ -101,8 +102,8 @@
     @include position-tlbr(calc(100% + 10px), auto, auto, 0);
     @include size(400px, auto);
     color: $text-primary-color;
-    border: $border-color 1px solid;
-    animation: notify-growth ease-in 0.3s;
+    border: $border-color 1px;
+    animation: growth ease-in 0.3s;
     transform-origin: calc(100% - 20px) top;
     display: none;
 
@@ -186,6 +187,8 @@
       top: -20px;
     }
   }
+  &-with-search {
+  }
 }
 // Form Login - Register
 .auth-form {
@@ -198,6 +201,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 12px;
     & > .-heading {
       font-size: 2.2rem;
       font-weight: 600;
@@ -219,7 +223,7 @@
           @extend %primary-input;
         }
       }
-      &__policy {
+      &__aside {
         margin-top: 20px;
         text-align: center;
         & > .-content {
@@ -230,7 +234,26 @@
             color: $primary-color;
           }
         }
+        > .form__help {
+          display: flex;
+          justify-content: flex-end;
+          .-link {
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #939393;
+            &.-forgot {
+              color: $primary-color;
+            }
+          }
+          .-separate {
+            display: block;
+            border: $border-color 1px solid;
+            margin: 0 16px;
+          }
+        }
       }
+
       &__controls {
         margin-top: 100px;
         display: flex;
