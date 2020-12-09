@@ -3,12 +3,13 @@
 @import "./mixins";
 // header
 .header {
-  height: 120px;
+  height: $header-height;
   @include bgc-gradient;
   //   navbar
   &__navbar {
     display: flex;
     justify-content: space-between;
+    height: $navbar-height;
     // list
     &-list {
       margin: 10px 0 0 0;
@@ -187,7 +188,124 @@
       top: -20px;
     }
   }
+  // HEADER WITH SEARCH
   &-with-search {
+    height: $header-bottom-height;
+    display: flex;
+    align-items: center;
+    margin: 0 8px;
+  }
+  &__logo {
+    width: 200px;
+    &-img {
+      width: 150px;
+      path {
+        fill: $white-color;
+      }
+    }
+  }
+  &__search {
+    height: 40px;
+    flex-grow: 1;
+    background: $white-color;
+    display: flex;
+    align-items: center;
+    @extend %primary-border-radius;
+    &-input {
+      height: 100%;
+      border: none;
+      outline: none;
+      font-size: 1.6rem;
+      color: $text-primary-color;
+      padding: 0 16px;
+      flex-grow: 1;
+    }
+    &-select {
+      border-left: 1px $border-color solid;
+      padding: 0 16px;
+      position: relative;
+      cursor: pointer;
+      .-label,
+      .-icon {
+        font-size: 1.4rem;
+      }
+
+      .-option {
+        position: absolute;
+        right: 0;
+        top: calc(100% + 5px);
+        background-color: $white-color;
+        @extend %primary-border-radius;
+        list-style: none;
+        padding: 0;
+        width: 130px;
+        box-shadow: 0 1px 2px #ddd;
+        display: none;
+
+        .-item:first-child {
+          border-top-left-radius: 3px;
+          border-top-right-radius: 3px;
+        }
+        .-item:last-child {
+          border-bottom-left-radius: 3px;
+          border-bottom-right-radius: 3px;
+        }
+        .-item {
+          padding: 8px;
+          text-align: left;
+          span {
+            font-size: 1.4rem;
+          }
+          i {
+            font-size: 1.2rem;
+            color: $primary-color;
+            margin: 0 0 0 12px;
+            display: none;
+          }
+          &.-active i {
+            display: inline-block;
+          }
+          &:hover {
+            background: #fafafa;
+          }
+        }
+      }
+      .-option::before {
+        content: "";
+        position: absolute;
+        display: block;
+        @include size(100%, 20px);
+
+        top: -15px;
+      }
+      // Show option
+      &:hover .-option {
+        display: block;
+      }
+    }
+    .btn-search {
+      background: $primary-color;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      @include size(60px, 34px);
+      margin-right: 3px;
+      > .-icon {
+        color: $white-color;
+        font-size: 1.6rem;
+      }
+      &:hover {
+        background: rgba($color: $primary-color, $alpha: 0.9);
+      }
+    }
+  }
+  &__cart {
+    width: 150px;
+    text-align: center;
+    &-icon {
+      color: $white-color;
+      font-size: 2.4rem;
+    }
   }
 }
 // Form Login - Register
