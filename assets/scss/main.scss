@@ -211,14 +211,60 @@
     display: flex;
     align-items: center;
     @extend %primary-border-radius;
+    &-input-wrap {
+      flex-grow: 1;
+      position: relative;
+    }
     &-input {
-      height: 100%;
+      @include size(100%);
       border: none;
       outline: none;
       font-size: 1.6rem;
       color: $text-primary-color;
       padding: 0 16px;
-      flex-grow: 1;
+      &:focus + .header__search-history {
+        display: block;
+      }
+    }
+    // History search
+    &-history {
+      position: absolute;
+      top: calc(100% + 14px);
+      left: 0;
+      background-color: $white-color;
+      width: calc(100% - 16px);
+      @extend %primary-border-radius;
+      box-shadow: 0 1px 2px #ddd;
+      display: none;
+      .-heading {
+        margin: 8px 12px;
+        font-size: 1.4rem;
+        color: $text-secondary-color;
+      }
+      .-list {
+        padding-left: 0;
+        list-style: none;
+        margin: 0;
+        .-item {
+          height: 38px;
+          padding: 0 12px;
+          line-height: 38px;
+          &:last-child {
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+          }
+          &:hover {
+            background-color: #fafafa;
+          }
+          .-link {
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: $text-primary-color;
+            display: block;
+          }
+        }
+      }
     }
     &-select {
       border-left: 1px $border-color solid;
