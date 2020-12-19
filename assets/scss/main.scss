@@ -345,15 +345,59 @@
       }
     }
   }
+  // HEADER CART
   &__cart {
-    width: 150px;
+    @include size(100px, auto);
     text-align: center;
+
+    &-wrap {
+      display: inline-block;
+      position: relative;
+      padding: 3px 10px;
+      &:hover > .header__cart-list {
+        display: block;
+      }
+    }
+
     &-icon {
       color: $white-color;
       font-size: 2.4rem;
     }
+    & .-no-cart {
+      padding: 20px 0;
+      &-text {
+        font-size: 1.4rem;
+        cursor: default;
+      }
+      &-img {
+        width: 25%;
+        object-fit: contain;
+      }
+    }
+    &-list {
+      @include size(400px, auto);
+      position: absolute;
+      top: calc(100% + 10px);
+      right: -5px;
+      background: $white-color;
+      border-radius: 3px;
+      box-shadow: 0 1px 10px rgba($color: #000000, $alpha: 0.2);
+      display: none;
+      animation: fadeIn ease-in-out 0.2s;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -25px;
+        right: 6px;
+        border-width: 15px 20px;
+        border-style: solid;
+        border-color: transparent transparent $white-color transparent;
+      }
+    }
   }
 }
+
 // Form Login - Register
 .auth-form {
   @include size(500px, auto);
