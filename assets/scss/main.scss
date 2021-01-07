@@ -362,18 +362,124 @@
     &-icon {
       color: $white-color;
       font-size: 2.4rem;
+      & + .-icon-notice {
+        position: absolute;
+        font-size: 1.4rem;
+        line-height: 1.4rem;
+        color: $secondary-color;
+        background: $white-color;
+        border: 2px solid $primary-color;
+        border-radius: 10px;
+        padding: 1px 7px;
+        font-weight: 600;
+        top: -6px;
+        right: -4px;
+      }
+    }
+
+    & .-no-cart-text {
+      font-size: 1.4rem;
+      cursor: default;
+      display: none;
+    }
+    & .-no-cart-img {
+      width: 25%;
+      object-fit: contain;
+      display: none;
     }
     & .-no-cart {
       padding: 20px 0;
-      &-text {
+      display: block;
+
+      & .-no-cart-text {
         font-size: 1.4rem;
         cursor: default;
+        display: block;
       }
-      &-img {
+      & .-no-cart-img {
         width: 25%;
         object-fit: contain;
+        display: block;
+        margin: 0 auto;
       }
     }
+
+    & .-heading {
+      text-align: left;
+      margin: 8px 0px 8px 12px;
+      font-size: 1.4rem;
+      color: $text-secondary-color;
+    }
+    & .-list-items {
+      padding: 0;
+      list-style: none;
+    }
+    & .-item {
+      display: flex;
+      padding: 12px;
+
+      &:hover {
+        background: #f7f7f7;
+        cursor: default;
+      }
+
+      &__img {
+        @include size(50px);
+        margin-left: 12px;
+        border: 1px solid #e8e8e8;
+      }
+      &__info {
+        width: 100%;
+      }
+      &__info-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 50%;
+
+        .-name {
+          font-size: 1.4rem;
+          font-weight: 400;
+          flex: 1;
+          margin: 0;
+        }
+        .-price {
+          flex: 1;
+          font-size: 1.4rem;
+          color: $primary-color;
+          text-align: right;
+          white-space: normal;
+        }
+      }
+      &__info-body {
+        height: 50%;
+        text-align: left;
+        margin-left: 12px;
+        display: flex;
+        justify-content: space-between;
+
+        .-category {
+          font-size: 1.2rem;
+          color: #939393;
+        }
+        .-btn-remove {
+          font-size: 1.4rem;
+          &:hover {
+            cursor: pointer;
+            color: $primary-color;
+          }
+        }
+      }
+    }
+
+    .-btn-view-cart {
+      float: right;
+      margin: 0 10px 10px 0;
+      &:hover {
+        background: rgba($color: $primary-color, $alpha: 0.9);
+      }
+    }
+
     &-list {
       @include size(400px, auto);
       position: absolute;
