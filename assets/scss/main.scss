@@ -15,6 +15,7 @@
       margin: 10px 0 0 0;
       padding-left: 0;
       list-style: none;
+      display: flex;
       //   item
       & > .-item {
         display: inline-block;
@@ -50,6 +51,75 @@
           @include prefix(transform, translateY(-50%), webkit ms);
           margin-right: -9px;
           right: 0;
+        }
+
+        .-user {
+          display: flex;
+          justify-content: center;
+          position: relative;
+          &:hover .-user-menu {
+            display: block;
+          }
+          .-user__img {
+            @include size(22px);
+            border-radius: 50%;
+            border: 1px solid rgba($color: #000000, $alpha: 0.1);
+          }
+          .-user-name {
+            margin-left: 8px;
+          }
+
+          .-user-menu {
+            @extend %primary-border-radius;
+            position: absolute;
+            padding-left: 0;
+            top: calc(100% + 5px);
+            right: 0;
+            background-color: $white-color;
+            list-style: none;
+            width: 160px;
+            z-index: 1;
+            box-shadow: 0 1px 2px #ddd;
+            display: none;
+
+            &::before {
+              content: "";
+              border: 12px solid;
+              border-bottom: 10px solid;
+              border-color: transparent transparent $white-color transparent;
+              position: absolute;
+              top: -22px;
+              right: 16px;
+            }
+
+            &::after {
+              content: "";
+              @include size(100%, 25px);
+              position: absolute;
+              top: -20px;
+            }
+
+            .-user-item {
+              text-align: left;
+              a {
+                display: block;
+                padding: 8px;
+                padding-left: 20px;
+                text-decoration: none;
+                color: $text-primary-color;
+              }
+              &:hover {
+                background-color: #f7f7f7;
+              }
+              &:first-child {
+                border-radius: 3px 3px 0 0;
+              }
+              &:last-child {
+                border-radius: 0 0 3px 3px;
+                border-top: 1px solid rgba($color: #000000, $alpha: 0.05);
+              }
+            }
+          }
         }
       }
       // hover items
@@ -107,6 +177,9 @@
     animation: growth ease-in 0.3s;
     transform-origin: calc(100% - 20px) top;
     display: none;
+    z-index: 1;
+    @extend %primary-border-radius;
+    box-shadow: 0 1px 2px #ddd;
 
     & > .-header {
       margin: 12px;
@@ -202,6 +275,9 @@
       path {
         fill: $white-color;
       }
+    }
+    &-link {
+      text-decoration: none;
     }
   }
   &__search {
