@@ -22,6 +22,18 @@ html {
   &__row {
     display: flex;
     flex-wrap: wrap;
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+  &__col-2 {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 16.6667%;
+  }
+  &__col-10 {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 83.3334%;
   }
 }
 
@@ -79,9 +91,10 @@ html {
   cursor: pointer;
   font-size: 1.4rem;
   color: $text-primary-color;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
+  background-color: $white-color;
   &.-primary {
     background-color: $primary-color;
     color: $white-color;
@@ -93,5 +106,55 @@ html {
   }
   &.-size-s {
     height: 30px;
+  }
+}
+// Selection
+.select-input {
+  height: 34px;
+  min-width: 200px;
+  padding: 0 12px;
+  @extend %primary-border-radius;
+  background-color: $white-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  position: relative;
+
+  &__label {
+    font-weight: 600;
+  }
+
+  &__list {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 1px);
+    @extend %primary-border-radius;
+    background-color: $white-color;
+    margin: 0;
+    padding: 10px 0;
+    list-style: none;
+    display: none;
+    .-item {
+      a {
+        width: 100%;
+        height: 34px;
+        display: flex;
+        align-items: center;
+        padding: 0 12px 0 15px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.4rem;
+        color: $text-primary-color;
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+
+  &:hover &__list {
+    display: block;
   }
 }
