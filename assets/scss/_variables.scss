@@ -9,6 +9,10 @@ $secondary-color: #fe6433;
 $border-color: #d3d3d3;
 
 //-----------HEIGHT---------
-$navbar-height: 30px;
-$header-height: 120px;
-$header-bottom-height: calc(#{$header-height - $navbar-height});
+:root {
+  --navbar-height: 30px;
+  --header-height: 120px;
+  --header-bottom-height: calc(var(--header-height) - var(--navbar-height));
+  --header-sort-height: 46px;
+  --header-search-height: 48px;
+}

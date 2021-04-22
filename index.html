@@ -12,14 +12,16 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
     />
+    <link rel="stylesheet" href="./assets/css/grid.css" />
     <link rel="stylesheet" href="./assets/scss/main.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
   </head>
   <body>
-    <div class="wrapper">
+    <div class="wrapper" style="display: block">
       <header class="header">
-        <div class="grid">
+        <div class="grid wide">
           <!-- Navbar -->
-          <nav class="header__navbar">
+          <nav class="header__navbar hide-on-mobile-tablet">
             <ul class="header__navbar-list">
               <li class="-item -separate -has-qr">
                 Vào cửa hàng trên ứng dụng Trí - Shop
@@ -184,7 +186,11 @@
 
           <!-- Header with search -->
           <div class="header-with-search">
-            <div class="header__logo">
+            <label for="search-mobile-checkbox" class="header-search-mobile"
+              ><i class="header-search-mobile__icon fas fa-search -icon"></i
+            ></label>
+
+            <div class="header__logo hide-on-tablet">
               <div class="header__logo-img">
                 <a href="/" class="header__logo-link">
                   <svg
@@ -200,6 +206,7 @@
               </div>
             </div>
             <!-- Search box -->
+            <input type="checkbox" id="search-mobile-checkbox" hidden />
             <div class="header__search">
               <div class="header__search-input-wrap">
                 <input
@@ -360,14 +367,31 @@
             </div>
           </div>
         </div>
+
+        <ul class="header-sort">
+          <li class="header-sort__item">
+            <a href="" class="header-sort__item--link"> Liên quan </a>
+          </li>
+          <li class="header-sort__item -active">
+            <a href="" class="header-sort__item--link"> Mới nhất </a>
+          </li>
+          <li class="header-sort__item">
+            <a href="" class="header-sort__item--link"> Bán chạy </a>
+          </li>
+          <li class="header-sort__item">
+            <a href="" class="header-sort__item--link">
+              Giá <i class="fas fa-sort"></i>
+            </a>
+          </li>
+        </ul>
       </header>
 
       <div class="app_container">
-        <div class="grid">
+        <div class="grid wide">
           <!-- Row -->
-          <div class="grid__row app_content">
+          <div class="row sm-gutter app_content">
             <!-- Danh mục -->
-            <div class="grid__col-2">
+            <div class="col l-2 m-0 c-0">
               <div class="category">
                 <ul class="category_list">
                   <h3 class="category_list-heading">
@@ -390,9 +414,9 @@
               </div>
             </div>
             <!-- Show danh sách -->
-            <div class="grid__col-10">
+            <div class="col l-10 m-12 c-12">
               <!-- Home filter -->
-              <div class="home-filter">
+              <div class="home-filter hide-on-mobile-tablet">
                 <span class="home-filter__label">Sắp xếp theo</span>
                 <button class="btn -primary">Phổ biến</button>
                 <button class="btn">Mới nhất</button>
@@ -423,12 +447,79 @@
                   </div>
                 </div>
               </div>
+
+              <!-- Mobile category -->
+              <div class="mobile-category l-0">
+                <ul class="mobile-category__list">
+                  <li class="mobile-category__item">
+                    <a href="#" class="mobile-category__link"
+                      >Dụng cụ & Thiết bị gia dụng</a
+                    >
+                  </li>
+                  <li class="mobile-category__item">
+                    <a href="#" class="mobile-category__link"
+                      >Dụng cụ & Thiết bị gia dụng</a
+                    >
+                  </li>
+                  <li class="mobile-category__item">
+                    <a href="#" class="mobile-category__link"
+                      >Dụng cụ & Thiết bị gia dụng</a
+                    >
+                  </li>
+                  <li class="mobile-category__item">
+                    <a href="#" class="mobile-category__link"
+                      >Dụng cụ & Thiết bị gia dụng</a
+                    >
+                  </li>
+                  <li class="mobile-category__item">
+                    <a href="#" class="mobile-category__link"
+                      >Dụng cụ & Thiết bị gia dụng</a
+                    >
+                  </li>
+                  <li class="mobile-category__item">
+                    <a href="#" class="mobile-category__link"
+                      >Dụng cụ & Thiết bị gia dụng</a
+                    >
+                  </li>
+                  <li class="mobile-category__item">
+                    <a href="#" class="mobile-category__link"
+                      >Dụng cụ & Thiết bị gia dụng</a
+                    >
+                  </li>
+                  <li class="mobile-category__item">
+                    <a href="#" class="mobile-category__link"
+                      >Dụng cụ & Thiết bị gia dụng</a
+                    >
+                  </li>
+                  <li class="mobile-category__item">
+                    <a href="#" class="mobile-category__link"
+                      >Dụng cụ & Thiết bị gia dụng</a
+                    >
+                  </li>
+                  <li class="mobile-category__item">
+                    <a href="#" class="mobile-category__link"
+                      >Dụng cụ & Thiết bị gia dụng</a
+                    >
+                  </li>
+                  <li class="mobile-category__item">
+                    <a href="#" class="mobile-category__link"
+                      >Dụng cụ & Thiết bị gia dụng</a
+                    >
+                  </li>
+                  <li class="mobile-category__item">
+                    <a href="#" class="mobile-category__link"
+                      >Dụng cụ & Thiết bị gia dụng</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
               <!-- Home products -->
               <div class="home-product">
                 <div class="grid">
-                  <div class="grid__row">
+                  <div class="row sm-gutter">
                     <!-- Product -->
-                    <div class="grid__col-2-10">
+                    <div class="col l-2-4 m-4 c-6">
                       <a
                         href=""
                         id="link-product"
@@ -483,7 +574,7 @@
                     </div>
                     <!--End Product -->
                     <!-- Product -->
-                    <div class="grid__col-2-10">
+                    <div class="col l-2-4 m-4 c-6">
                       <a
                         href=""
                         id="link-product"
@@ -538,7 +629,7 @@
                     </div>
                     <!--End Product -->
                     <!-- Product -->
-                    <div class="grid__col-2-10">
+                    <div class="col l-2-4 m-4 c-6">
                       <a
                         href=""
                         id="link-product"
@@ -593,7 +684,7 @@
                     </div>
                     <!--End Product -->
                     <!-- Product -->
-                    <div class="grid__col-2-10">
+                    <div class="col l-2-4 m-4 c-6">
                       <a
                         href=""
                         id="link-product"
@@ -648,7 +739,7 @@
                     </div>
                     <!--End Product -->
                     <!-- Product -->
-                    <div class="grid__col-2-10">
+                    <div class="col l-2-4 m-4 c-6">
                       <a
                         href=""
                         id="link-product"
@@ -703,7 +794,7 @@
                     </div>
                     <!--End Product -->
                     <!-- Product -->
-                    <div class="grid__col-2-10">
+                    <div class="col l-2-4 m-4 c-6">
                       <a
                         href=""
                         id="link-product"
@@ -758,7 +849,7 @@
                     </div>
                     <!--End Product -->
                     <!-- Product -->
-                    <div class="grid__col-2-10">
+                    <div class="col l-2-4 m-4 c-6">
                       <a
                         href=""
                         id="link-product"
@@ -813,7 +904,7 @@
                     </div>
                     <!--End Product -->
                     <!-- Product -->
-                    <div class="grid__col-2-10">
+                    <div class="col l-2-4 m-4 c-6">
                       <a
                         href=""
                         id="link-product"
@@ -868,7 +959,7 @@
                     </div>
                     <!--End Product -->
                     <!-- Product -->
-                    <div class="grid__col-2-10">
+                    <div class="col l-2-4 m-4 c-6">
                       <a
                         href=""
                         id="link-product"
@@ -923,7 +1014,7 @@
                     </div>
                     <!--End Product -->
                     <!-- Product -->
-                    <div class="grid__col-2-10">
+                    <div class="col l-2-4 m-4 c-6">
                       <a
                         href=""
                         id="link-product"
@@ -998,10 +1089,10 @@
               <li class="pagination-item">
                 <a href="#" class="pagination-item__link"> 3 </a>
               </li>
-              <li class="pagination-item">
+              <li class="pagination-item c-0">
                 <a href="#" class="pagination-item__link"> 4 </a>
               </li>
-              <li class="pagination-item">
+              <li class="pagination-item c-0">
                 <a href="#" class="pagination-item__link"> 5 </a>
               </li>
               <li class="pagination-item">
@@ -1022,9 +1113,9 @@
       </div>
 
       <footer class="footer">
-        <div class="grid">
-          <div class="grid__row">
-            <div class="grid__col-2-10">
+        <div class="grid wide">
+          <div class="row">
+            <div class="col l-2-4 m-4 c-6">
               <h3 class="footer__heading">CHĂM SÓC KHÁCH HÀNG</h3>
               <ul class="footer-list">
                 <li class="footer-item">
@@ -1038,7 +1129,7 @@
                 </li>
               </ul>
             </div>
-            <div class="grid__col-2-10">
+            <div class="col l-2-4 m-4 c-6">
               <h3 class="footer__heading">VỀ TRÍ - SHOP</h3>
               <ul class="footer-list">
                 <li class="footer-item">
@@ -1060,7 +1151,7 @@
                 </li>
               </ul>
             </div>
-            <div class="grid__col-2-10">
+            <div class="col l-2-4 m-4 c-6">
               <h3 class="footer__heading">DANH SÁCH</h3>
               <ul class="footer-list">
                 <li class="footer-item">
@@ -1077,8 +1168,8 @@
                 </li>
               </ul>
             </div>
-            <div class="grid__col-2-10">
-              <h3 class="footer__heading">THEO DÕI CHÚNG TÔI TRÊN</h3>
+            <div class="col l-2-4 m-4 c-6">
+              <h3 class="footer__heading">THEO DÕI</h3>
               <ul class="footer-list">
                 <li class="footer-item">
                   <a href="#" class="footer-item__link"
@@ -1097,7 +1188,7 @@
                 </li>
               </ul>
             </div>
-            <div class="grid__col-2-10">
+            <div class="col l-2-4 m-8 c-12">
               <h3 class="footer__heading">TẢI ỨNG DỤNG NGAY THÔI</h3>
               <div class="footer__download">
                 <img
